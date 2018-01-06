@@ -1,0 +1,69 @@
+button{
+    background-color: #424242;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    box-shadow: 0 8px 8px #4C4C4C inset;
+    display: inline-block;
+    cursor: pointer;
+}
+button:focus{
+    box-shadow: 0 5px 3px #424242 inset;
+    outline: none;
+}
+
+input[type="text"]{
+    height: 24px;
+    border: none;
+    background-color: #989898;
+    box-shadow: 0 5px 6px #A8A8A8 inset, 0 -5px 6px #A8A8A8 inset;
+    color: #333333;
+    width: 100%;
+}
+input[type="text"]:focus{
+    outline: none;
+}
+
+.dropdown {
+    height: 24px;
+    color: #3D3D3D;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.dropdown:after {
+    content: "▼";
+    color: #3D3D3D;
+    font-size: 14px;
+    position: absolute;
+    right: 3px;
+    top: 2px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.dropdown select{
+    color: #3D3D3D;
+    height: 24px;
+    width: 100%;
+    background-color: #989898;
+    box-shadow: 0 5px 6px #A8A8A8 inset, 0 -5px 6px #A8A8A8 inset;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+.seperator{
+    height: 5px;
+    border: none;
+    box-shadow: 
+    0 2px 1px #00000021 inset,
+    0 -2px 1px #00000021 inset;
+
+}

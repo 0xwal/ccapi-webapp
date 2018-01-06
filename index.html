@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="refresh" content="1">-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/plugin.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/contextmenu.css"/>
+    <title>Console Manager | CCAPI</title>
+
+</head>
+<body>
+<div class="container">
+<div id="app">
+<header id="titleBar" class="h3">
+    <p><img src="res/ps3.ico"/>Console Manager (CCAPI 2.xx) by Enstone for CEX/DEX
+    </p>
+</header>
+<div id="tool">
+<div id="navBar">
+    <ul>
+        <li id="btnFile">File</li>
+    </ul>
+
+    <div id="menustripFile">
+        <ul>
+            <li id="btnOpenConsoleForm">Add new console</li>
+            <hr/>
+            <li>Quit</li>
+        </ul>
+    </div>
+</div>
+<div id="consoles">
+    <header>
+        Consoles
+    </header>
+    <div>
+        <ul id="lstConsoles">
+
+        </ul>
+    </div>
+</div>
+<div id="appImage">
+    <img src="res/console_manager.png"/>
+</div>
+<div id="tabControl">
+    <ul>
+        <li class="active">Details</li>
+        <li>System</li>
+        <li>Memory</li>
+        <li>Console Ids</li>
+    </ul>
+</div>
+
+<div id="tabContents">
+    <div id="details">
+        <div id="consoleinfo">
+            <header>Console Info</header>
+            <div class="content">
+                <p>Firmware: <span id="lblFirmware">?.??</span>
+                </p>
+                <p>CELL Temperature: <span id="lblCELLTemp">??</span> C
+                </p>
+                <p>Console Type: <span id="lblCosnoleType">???</span>
+                </p>
+                <p>RSX Temperature: <span id="lblRSXTemp">??</span> C
+                </p>
+                <button>Refresh</button>
+            </div>
+        </div>
+        <div id="consoleshutdown">
+            <header>Console Shutdown</header>
+            <div class="content">
+                <p>Mode</p>
+                <div>
+                    <input type="radio" name="radio_shutdownmode" checked/> Shutdown<br/>
+                    <input type="radio" name="radio_shutdownmode"/> Soft Reboot<br/>
+                    <input type="radio" name="radio_shutdownmode"/> Hard Reboot<br/>
+                </div>
+                <button>Execute</button>
+            </div>
+        </div>
+    </div>
+    <div id="system">
+
+        <div id="cosnoleleds">
+            <header>Console Leds</header>
+            <div class="content">
+                <div>
+                    <p>Green</p>
+                    <br/>
+                    <p><input name="radio_green" type="radio"/> Off
+                    </p>
+                    <p><input name="radio_green" type="radio" checked/> On
+                    </p>
+                    <p><input name="radio_green" type="radio"/> Blink
+                    </p>
+                </div>
+                <div>
+                    <p>Red</p>
+                    <br/>
+                    <p><input name="radio_red" type="radio" checked/> Off
+                    </p>
+                    <p><input name="radio_red" type="radio"/> On
+                    </p>
+                    <p><input name="radio_red" type="radio"/> Blink
+                    </p>
+                </div>
+
+                <button>Set leds</button>
+            </div>
+        </div>
+        <div id="consolebuzzer">
+            <header>Console buzzer</header>
+            <div class="content">
+                <div>
+                    <p>Mode</p>
+                    <br/>
+                    <p>
+                        <input name="radio_buzzermode" type="radio" checked/> Single
+                    </p>
+                    <p>
+                        <input name="radio_buzzermode" type="radio"/> Double
+                    </p>
+                    <p>
+                        <input name="radio_buzzermode" type="radio"/> Continuous
+                    </p>
+                </div>
+                <button>Ring buzzer</button>
+            </div>
+        </div>
+
+        <div style="clear: both"></div>
+        <br/>
+        <div id="notify">
+            <header>VSH Notify</header>
+            <div class="content">
+                <div class="dropdown">
+                    <select id="combo_icon">
+                        <option>Info</option>
+                        <option>Caution</option>
+                        <option>Friend</option>
+                        <option>Slider</option>
+                        <option>Wrong way</option>
+                        <option>Dialog</option>
+                        <option>Dialog Shadow</option>
+                        <option>Text</option>
+                        <option>Pointer</option>
+                        <option>Grab</option>
+                    </select>
+                </div>
+                <input type="text" id="txtMessage"/>
+                <button>Notify</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="memory">
+        <div id="memoryedition">
+            <header>Memory edition</header>
+            <div class="content">
+                <div id="processandkernal">
+                    <p>Processes & Kernals:</p>
+                    <div class="dropdown">
+                        <select id="combo_processand_kernal">
+                        </select>
+                    </div>
+                    <button>Retrieve List</button>
+                    <div style="clear: both"></div>
+                </div>
+                <br/>
+                <div class="seperator"> </div>
+                <br/>
+                <div id="offset">
+                    <div>
+                        <p>Offset:</p>
+                        <input type="text" id="txtOffset"/>
+                    </div>
+                    <div>
+                        <p>Size:</p>
+                        <div class="dropdown">
+                            <select id="combo_size">
+                                <option>byte</option>
+                                <option>dword (32b)</option>
+                                <option>qword (64b)</option>
+                                <option>string</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Input:</p>
+                        <input type="text" id="txtInput"/>
+                    </div>
+                    <button>Poke</button>
+
+                </div>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="consoleids">
+
+        <div>
+            <header>Idps changer "Console Id"</header>
+            <div class="content">
+
+                <input type="text" id="txtIdps">
+                <button id="btnSetCurrentIdps">Set current idps</button>
+
+                <button id="btnSetBootIdps">Set boot idps</button>
+            </div>
+
+        </div>
+        <br/>
+        <div>
+            <header>Psid changer</header>
+            <div class="content">
+
+                <input type="text" id="txtPsid">
+                <button id="btnSetCurrentPsid">Set current psid</button>
+
+                <button id="btnSetBootPsid">Set boot psid</button>
+
+            </div>
+        </div>
+        <br/>
+        <button id="btnResetBootIdps">Reset boot idps</button>
+        <button id="btnResetBootPsid">Reset boot psid</button>
+        <button id="btnOFWMode">OFW mode</button>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div id="newConsoleForm" class="hide">
+    <div>
+        <header><img src="res/ps3.ico"/>Add new console<span class="close">X</span></header>
+        <div>
+            <p>Enter your console details:</p>
+
+            <div>
+                <p>PS3 name:</p>
+                <br/>
+                <input type="text" name="" id="txtName">
+            </div>
+            <br/>
+            <div>
+                <p>PS3 ip:</p>
+                <br/>
+                <input type="text" id="txtIP">
+            </div>
+            <button class="close">Cancel</button>
+            <button id="btnOk">Ok</button>
+            <div style="clear: right"></div>
+        </div>
+    </div>
+</div>
+<div id="contextmenuConsole" class="context-container">
+    <ul class="context-menu">
+        <li>Connect</li>
+        <li>Delete</li>
+    </ul>
+</div>
+<script src="js/init.js"></script>
+</body>
+</html>
