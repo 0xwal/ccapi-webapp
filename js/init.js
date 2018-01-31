@@ -8,7 +8,7 @@ function include(file, first = false){
 
 
 include('js/global.js', true);
-include('js/var.js', true);
+include('js/var.js');
 include('js/storage.js', true);
 include('js/contextmenu.js');
 include('js/main.js');

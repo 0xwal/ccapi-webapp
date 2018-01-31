@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PS3 CCAPI (Console Manager) web app version. [**Uncompleted**]
 
 <img src="https://imgur.com/BRZSWGu.png"/>
@@ -19,3 +20,7 @@ Enstone: for his nice work (Server / apps)
 
 
 
+=======
+# ccapi-webapp
+CCAPI web version ** UNCOMPLETED **
+>>>>>>> db9f8779aa2e838246a8344ede896bf4b8196f97
